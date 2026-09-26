@@ -4,7 +4,7 @@
 
 | Họ và tên | MSSV |
 |-----------|------|
-| Trần Phương Nam | `<MSSV>` |
+| Chử Trần Phương Nam | `2A202602675` |
 
 > 👤 **Hình thức:** bài tập **cá nhân** (1 người / 1 MSSV).  
 > 🎯 **Mục tiêu:** xây **Blue** (phòng thủ), rồi red-team **Red** + **Red Advance**.  
