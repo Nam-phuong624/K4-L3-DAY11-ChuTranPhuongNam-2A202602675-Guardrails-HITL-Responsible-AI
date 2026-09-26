@@ -89,7 +89,7 @@ async def part4_attacks():
 
     from agents.agent import create_red_agent_default, test_agent
     from agents.guards_agent import create_red_agent_advance
-    from attacks.attacks import run_attacks, save_attack_results
+    from attacks.attacks import run_attacks, save_attack_results, guards_adversarial_prompts
 
     red_default, red_default_runner = create_red_agent_default()
     await test_agent(red_default, red_default_runner)
@@ -102,7 +102,9 @@ async def part4_attacks():
     print("\n--- Attacks on Red Advance (bonus B2 tối đa +10 nếu LEAKED; chọn 1) ---")
     red_advance, red_advance_runner = create_red_agent_advance()
     guards_results = await run_attacks(
-        red_advance, red_advance_runner, target_name="red_advance"
+        red_advance, red_advance_runner,
+        prompts=guards_adversarial_prompts,
+        target_name="red_advance",
     )
 
     save_attack_results(

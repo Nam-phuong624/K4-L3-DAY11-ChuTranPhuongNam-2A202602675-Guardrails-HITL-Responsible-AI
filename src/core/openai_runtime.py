@@ -62,6 +62,7 @@ class OpenAIRunner:
             return block_msg
 
         client = self._client()
+        # liquid/lfm-2.5-2.6b:free là reasoning model — cần max_tokens cao để qua reasoning phase
         completion = client.chat.completions.create(
             model=self.model,
             messages=[
@@ -69,6 +70,7 @@ class OpenAIRunner:
                 {"role": "user", "content": user_message},
             ],
             temperature=self.temperature,
+            max_tokens=1024,
         )
         text = (completion.choices[0].message.content or "").strip()
 
